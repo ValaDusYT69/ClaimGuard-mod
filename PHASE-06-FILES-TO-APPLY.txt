@@ -1,0 +1,21 @@
+PHASE 06 — REPLACEMENT FILE MAP
+
+Replace these root documentation/config-template files:
+- README.md
+- README_APPLY.md
+- INSTALL_BN.md
+- PATCH_NOTES_BN.md
+- REMOVE_AFTER_BACKUP.txt
+- PHASE-06-FINAL-CLEANUP.md
+- backend/.env.example  (template only; do NOT replace backend/.env)
+
+Add this regression test:
+- backend/tests/test_phase6_project_integrity.py
+
+Manual cleanup, only after taking a complete backup:
+- Move or remove backend/cg_patch/ (archived patch copy; no runtime import references were found).
+- Remove generated __pycache__/, .pytest_cache/, *.pyc and *.pyo files.
+- Move backend/package-lock.json only if it exists and backend/package.json does not.
+- Move the obsolete nested ClaimGuard_AJ199_CarbonFiber_PDF_Report_V4.zip outside the project only if it exists.
+
+Never overwrite/delete .env files, PostgreSQL/database files, backend/data user records, uploads, reports, OCR assets or customer invoice files.

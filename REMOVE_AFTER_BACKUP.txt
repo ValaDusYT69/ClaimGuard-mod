@@ -1,0 +1,13 @@
+Phase 06 cleanup list for an existing Phase 01–05 project (after full backup):
+
+1. backend/cg_patch/ — archived duplicate patch copies; no active Python import/reference was found. Move it outside the project if you need to retain history, otherwise remove it.
+2. Generated __pycache__/ directories, .pytest_cache/ directories and *.pyc files — safe to regenerate.
+3. backend/package-lock.json — only if present AND no backend/package.json exists; move it to an archive rather than deleting blindly.
+4. ClaimGuard_AJ199_CarbonFiber_PDF_Report_V4.zip — only if present; it is an old nested archive, not runtime source. Keep outside the application tree if needed.
+
+Never remove or overwrite:
+- backend/.env or searxng/.env
+- backend/data/* database, JSON, OTP, or user records
+- backend/uploads/
+- backend/reports/
+- OCR traineddata/models or user-provided invoice assets
